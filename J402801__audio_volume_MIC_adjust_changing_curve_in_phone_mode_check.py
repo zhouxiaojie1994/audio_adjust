@@ -209,7 +209,7 @@ if __name__ == '__main__':
         excel.save('%s/MIC_Test_Result.xls'%file_path)
         test.chart_draw(dut_MIC_volume,sut_MIC_volume)
     else:
-        sut_MIC_volume=['50','50','50','50','50','50','50','50','50','50','50','50','50','50','50','50','50','50','50','50','50']
+        sut_MIC_volume=['50']*21
         excel.save('%s/MIC_Test_Result.xls'%file_path)
         test.chart_draw(dut_MIC_volume,sut_MIC_volume)
     

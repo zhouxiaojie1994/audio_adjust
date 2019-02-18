@@ -231,7 +231,7 @@ if __name__ == '__main__':
         excel.save('%s/SPEK_Test_Result.xls'%file_path)
         test.chart_draw(dut_SPEK_volume,sut_SPEK_volume)
     else:
-        sut_SPEK_volume=['50','50','50','50','50','50','50','50','50','50','50','50','50','50','50','50','50','50','50','50','50']
+        sut_SPEK_volume=['50']*21
         excel.save('%s/SPEK_Test_Result.xls'%file_path)
         test.chart_draw(dut_SPEK_volume,sut_SPEK_volume)
     
