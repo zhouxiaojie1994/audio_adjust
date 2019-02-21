@@ -171,10 +171,9 @@ class AudioAdjustTest(object):
         self.logger.info("Test finished!\nFile save in %s,Please check the result." %file_path)
     #以下代码检查样机连接状态
     def ping_dut(self,ip):
-        dut_ip=self.ip
         count = 0
         while(count<3):
-            if PyPing.check_ping(dut_ip,timeout=2,count=4):
+            if PyPing.check_ping(self.ip,timeout=2,count=4):
                 self.logger.debug("check connect OK!")
                 break
             else:
@@ -217,7 +216,7 @@ if __name__ == '__main__':
     print dut_SPEK_volume   
     #输入SUT IP
     sut_test=raw_input("Please check if your SUT type is TP IPC(Y/N):")
-    if sut_test=='Y':
+    if sut_test.lower()=='y':
         sut_ip = raw_input('please input SUT IP(default IP is 192.168.1.60): ')
         if sut_ip == '':
             sut_ip = '192.168.1.60'
@@ -227,6 +226,7 @@ if __name__ == '__main__':
         logging.info('Reload file path')
         SUT_SPEK_Record_path=r'E:/Public/fyp/auto_test/audio_adjust/record/half_mode/SPEK_Record/SUT_SPEK'
         test.reload_file_path(SUT_SPEK_Record_path)
+        DUT_Ctrl=ipc_audio.DUTCtrl(ip=sut_ip)
         test.sut_SPEK_test()
         excel.save('%s/SPEK_Test_Result.xls'%file_path)
         test.chart_draw(dut_SPEK_volume,sut_SPEK_volume)

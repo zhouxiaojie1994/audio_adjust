@@ -205,6 +205,7 @@ if __name__ == '__main__':
         logging.info("Reload file_path.")
         SUT_MIC_Record_path=r'E:/Public/fyp/auto_test/audio_adjust/record/full_mode/MIC_Record/SUT_MIC'
         test.reload_file_path(SUT_MIC_Record_path)
+        DUT_Ctrl=ipc_audio.DUTCtrl(ip=sut_ip)
         test.sut_mic_test()
         excel.save('%s/MIC_Test_Result.xls'%file_path)
         test.chart_draw(dut_MIC_volume,sut_MIC_volume)

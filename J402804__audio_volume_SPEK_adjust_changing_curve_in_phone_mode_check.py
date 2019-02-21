@@ -227,6 +227,7 @@ if __name__ == '__main__':
         logging.info('Reload file path')
         SUT_SPEK_Record_path=r'E:/Public/fyp/auto_test/audio_adjust/record/full_mode/SPEK_Record/SUT_SPEK'
         test.reload_file_path(SUT_SPEK_Record_path)
+        DUT_Ctrl=ipc_audio.DUTCtrl(ip=sut_ip)
         test.sut_SPEK_test()
         excel.save('%s/SPEK_Test_Result.xls'%file_path)
         test.chart_draw(dut_SPEK_volume,sut_SPEK_volume)
