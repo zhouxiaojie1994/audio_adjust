@@ -217,7 +217,7 @@ if __name__ == '__main__':
     print dut_SPEK_volume   
     #输入SUT IP
     sut_test=raw_input("Please check if your SUT type is TP IPC(Y/N):")
-    if sut_test=='Y':
+    if sut_test.lower()=='y':
         sut_ip = raw_input('please input SUT IP(default IP is 192.168.1.60): ')
         if sut_ip == '':
             sut_ip = '192.168.1.60'
